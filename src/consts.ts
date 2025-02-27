@@ -16,11 +16,11 @@ export const QUOTE = "一个通过绳子穿越到虚拟世界的病弱宅女";
 export const NAV_LINKS: Array<{ title: string; href?: string }> = [
   {
     title: "BiliBili",
-    href: "//https://space.bilibili.com/277854028/"
+    href: "//space.bilibili.com/277854028/"
   },
   {
     title: "Live Room",
-    href: "//https://live.bilibili.com/27495696/",
+    href: "//live.bilibili.com/27495696/",
   },
   {
     title: "Source",
