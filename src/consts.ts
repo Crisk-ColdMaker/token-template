@@ -3,11 +3,14 @@ export const SITE_DESCRIPTION =
   `Token Astro + Tailwind CSS starter featuring a sleek black-and-white terminal-inspired design, with support for RSS, sitemap, MD/MDX blog posts static content.`.trim();
 
 export const KNOWN_TECH =
-  `Astro,Tailwindcss,Svelte,Nextjs,Javascript,Typescript,Python,SCSS,CSS,HTML,HTMX,Astro,Tailwindcss,Svelte,Nextjs,Javascript,Typescript,Python,SCSS,CSS,HTML,HTMX`.split(
+  `Hiki,IA,VOCALOID,Dog,酸,Miku X Luka,KAITO,MMD,豆腐汤,甜品,胡辣汤,服装设计,睡觉,OC,Arknights,Otome Game,UTAU,银魂,Study Black Magic,...`.split(
     ",",
   );
 export const ABOUT_ME =
-  `Token is a modern and minimalistic Astro + Tailwind CSS starter designed for developers, students, and creators looking to build clean, fast, and functional websites. Featuring a sleek black-and-white theme with a custom terminal-inspired font, this template is perfect for personal portfolios, blogs, or any static content-driven website. The template comes packed with features like Markdown (MD) and MDX support for writing blog posts or documentation, allowing for flexibility and ease of use. It includes Tailwind CSS for effortless styling and customization, enabling users to tweak the design to match their branding or personal preferences without hassle. Additionally, Token integrates essential utilities like RSS feed generation, a sitemap for SEO optimization, and pre-configured components for seamless content management. Everything is static, making the site incredibly fast, lightweight, and easy to deploy on platforms like Vercel, Netlify, or Deno Deploy. Whether you're a programmer showcasing your projects, a writer sharing your ideas, or someone looking to establish an online presence, this template provides all the tools you need in a stylish and functional package. With its developer-first approach and clean codebase, Token offers a strong foundation for creating visually appealing websites that stand out while keeping performance and simplicity at the forefront.`.trim();
+  `hiki虽然迎来了二周目但是身体状态还是没有变，hiki的身体一直不好，一周目就是这样了，但是现在二周目有在慢慢攻克它，一定会好的，hiki是不会输给它的！ヾ(๑╹ヮ╹๑)ﾉ”
+不过hiki疾病的一大难题就是有时候会突然出现、会在毫无防备的情况下突然发病，像定时炸弹一样无法避免，所以有时hiki直播时会突然开始难受而导致突然断播_:(´□\`」 ∠):_
+所以作为一名合格的宅酱饭可是要做好hiki随时会突然掉线的准备哦(*´∀｀)
+透露这些是让大家做好心理准备，更进一步的了解hiki，如果你不能接受这样的hiki可以选择离开，这是你的自由，没事的啦，hiki属于那种完全尊重他人想法的人（因此太佛系容易慢热）`.trim();
 export const GITHUB_USERNAME = "Crisk-ColdMaker";
 export const QUOTE = "一个通过绳子穿越到虚拟世界的病弱宅女";
 export const NAV_LINKS: Array<{ title: string; href?: string }> = [
@@ -21,6 +24,6 @@ export const NAV_LINKS: Array<{ title: string; href?: string }> = [
   },
   {
     title: "Source",
-    href: "//github.com/ArnavK-09/token-template",
+    href: "//github.com/Crisk-ColdMaker/token-template",
   },
 ];
