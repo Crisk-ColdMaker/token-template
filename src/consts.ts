@@ -1,6 +1,6 @@
 export const SITE_TITLE = "Hiki";
 export const SITE_DESCRIPTION =
-  `Token Astro + Tailwind CSS starter featuring a sleek black-and-white terminal-inspired design, with support for RSS, sitemap, MD/MDX blog posts static content.`.trim();
+  `HikiFans`.trim();
 
 export const KNOWN_TECH =
   `Hiki,IA,VOCALOID,Dog,酸,Miku X Luka,KAITO,MMD,豆腐汤,甜品,胡辣汤,服装设计,睡觉,OC,Arknights,Otome Game,UTAU,银魂,Study Black Magic,...`.split(
