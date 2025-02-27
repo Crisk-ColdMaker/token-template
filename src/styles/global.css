@@ -1,11 +1,39 @@
+/* 字体声明 */
 @font-face {
   font-family: "VCR";
   src: url("/fonts/VCRosdNEUE.ttf") format("truetype");
-  font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "ChineseFont";
+  src: 
+    url("/fonts/zpix.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* 全局字体栈 */
 body {
-  font-family: "VCR", monospace !important;
+  font-family: 
+    "VCR", 
+    "ChineseFont",
+    "Noto Sans SC", 
+    "Microsoft YaHei",
+    monospace;
+  font-size: clamp(14px, 2vw, 16px); /* 响应式字号 */
+}
+
+/* 中文优化 */
+:lang(zh) {
+  line-height: 1.75;
+}
+
+/* 防止像素字体变形 */
+@media screen and (max-resolution: 120dpi) {
+  :lang(zh) {
+    -webkit-font-smoothing: none; /* 关闭抗锯齿 */
+    image-rendering: pixelated;
+  }
 }
 
 pre,
