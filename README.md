@@ -1,4 +1,4 @@
-<h1 align="center">Token</h1>
+<h1 align="center">Hiki Fans</h1>
 <h2 align="center">Minimal Astro + Tailwind CSS Starter</h2>
 
 <p align="center">
@@ -93,6 +93,11 @@ npm run dev
 ## 🙋‍♂️ Issues
 
 Found a bug or need help? Please create an issue on the [GitHub repository](https://github.com/ArnavK-09/token-template/issues) with a detailed description.
+
+## 📄 License
+<p align="center">
+<strong>原项目</strong>基于 ISC License
+</p>
 
 ## 👤 Author
 
