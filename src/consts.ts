@@ -3,7 +3,7 @@ export const SITE_DESCRIPTION =
   `HikiFans`.trim();
 
 export const KNOWN_TECH =
-  `Hiki,IA,VOCALOID,修狗,酸,Miku X Luka,KAITO,MMD,豆腐汤,甜品,胡辣汤,服装设计,睡觉,OC,Arknights,Otome Game,UTAU,银魂,Study Black Magic,...`.split(
+  `Hiki,IA,原味薯片,VOCALOID,修勾,酸,Miku X Luka,KAITO,芒果,MMD,豆腐汤,甜品,胡辣汤,服装设计,睡觉,绘画,OC,Arknights,Otome Game,UTAU,银魂,Black Magic,...`.split(
     ",",
   );
 export const ABOUT_ME =

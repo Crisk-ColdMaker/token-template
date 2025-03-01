@@ -1,7 +1,15 @@
 ---
-title: "等待填入"
-description: "不知道"
-pubDate: "Feb 27 2025"
-heroImage: "/wait.png"
+title: "Hi言Ki语"
+description: "先空着"
+pubDate: "Mar 1 2025"
+heroImage: "/motto.jpg"
 ---
-反正会写和Hiki相关的
+​	强扭的瓜不甜，但是你一定想要扭它
+
+​	这是一个换行测试
+
+​	这是一个换行测试
+
+​	这是一个换行测试
+
+(待补充)
