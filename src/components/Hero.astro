@@ -4,15 +4,16 @@ import HeroImg from "@/hero.png";
 import { QUOTE, SITE_TITLE } from "@/consts";
 ---
 
-<div class="hero-bg hidden md:block h-screen hero-bg-animate absolute top-0"></div>
+<div class="hero-bg hidden md:block h-screen hero-bg-animate absolute top-0">
+</div>
 <section
   class="h-screen !z-[20] relative w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-2 gap-4 items-center"
   id="hero"
 >
   <div class="grid place-items-center">
     <div class="text-center -mt-10">
-      <h1 class="font-bold text-7xl">{`${SITE_TITLE}`}</h1>
-      <h2 class="text-2xl opacity-95">
+      <h1 class="font-bold text-7xl" id="title-text">{`${SITE_TITLE}`}</h1>
+      <h2 class="text-2xl opacity-95" id="quote-text">
         {QUOTE}
       </h2>
     </div>
@@ -36,4 +37,40 @@ import { QUOTE, SITE_TITLE } from "@/consts";
     }
     hero_bg.textContent = binaryText;
   }, 300);
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const titleElement = document.getElementById("title-text");
+    const quoteElement = document.getElementById("quote-text");
+
+    const titleText = titleElement.textContent;
+    const quoteText = quoteElement.textContent;
+
+    titleElement.textContent = "";
+    quoteElement.textContent = "";
+
+    function typeWriter(element, text, speed, delay = 0) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          let i = 0;
+          const interval = setInterval(() => {
+            if (i < text.length) {
+              element.textContent += text.charAt(i);
+              i++;
+            } else {
+              clearInterval(interval);
+              resolve();
+            }
+          }, speed);
+        }, delay);
+      });
+    }
+
+    typeWriter(titleElement, titleText, 100)
+      .then(() => {
+        return typeWriter(quoteElement, quoteText, 100);
+      })
+      .then(() => {
+        console.log("打字机效果完成");
+      });
+  });
 </script>
