@@ -1,31 +1,19 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-
-const mdFilePath = "/public/settings.md";
-
-const mdModule = await import(mdFilePath);
-
-const frontmatter = mdModule.frontmatter;
-const ContentComponent = mdModule.Content;
+import { Image } from "astro:assets";
+import Settings from "@/settings.png";
+const { default: ContentComponent } = await import("@/settings.md");
 ---
 
-<article class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto p-4">
-    <div
-        class="flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden"
-    >
-        <img
-            src="/public/settings.png"
-            alt="settings"
-            class="w-full h-full object-cover"
-        />
-    </div>
+<article class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto p-4 items-stretch">
+    <Image
+        alt="Settings Preview"
+        src={Settings}
+        class="h-full object-cover bg-gray-100 rounded-lg"
+        quality={80}
+    />
     <div
         class="prose !max-w-[90vw] overflow-x-hidden !break-words brightness-110 prose-img:scale-90 prose-img:rounded-2xl prose-invert prose-hr:border-white prose-hr:bg-white px-4 md:px-0"
     >
-        <div>
-            <ContentComponent />
-        </div>
+        <ContentComponent />
     </div>
 </article>
-
-
