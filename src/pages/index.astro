@@ -4,8 +4,10 @@ import Hero from "@/components/Hero.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Section from "@/components/Section.astro";
 import BlogPostCard from "@/components/BlogPostCard.astro";
+import SettingCollection from "@/components/SettingCollection.astro";
 import Layout from "@/layouts/Layout.astro";
 import { KNOWN_TECH, ABOUT_ME } from "@/consts";
+// import MarkdownContent from 'public/信息概要.md';
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -42,7 +44,13 @@ const posts = (await getCollection("blog")).sort(
   <Section title="About Hiki">
     <div class="w-full grid place-items-center">
       <div
-        class="max-w-4xl text-xl md:text-lg opacity-90 text-center justify-evenly"
+      class="max-w-4xl text-xl md:text-lg opacity-90 justify-evenly"
+    >
+      <p class="text-center">「过时的简要介绍」</p>
+      <SettingCollection/>
+    </div>
+      <div
+        class="max-w-4xl mt-10 text-xl md:text-lg opacity-90 text-center justify-evenly"
       >
         <p>「一位蓝发心理医生的资料」</p>
         <p>{ABOUT_ME}</p>

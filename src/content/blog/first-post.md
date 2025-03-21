@@ -1,7 +1,8 @@
 ---
 title: "Hiki的奇妙梦境"
 description: "一些有趣的梦"
-pubDate: "Mar 19 2025"
+pubDate: "Feb 27 2025"
+updatedDate: "Mar 19 2025"
 heroImage: "/dream3.png"
 ---
 
