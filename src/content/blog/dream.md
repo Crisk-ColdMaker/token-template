@@ -2,7 +2,7 @@
 title: "Hiki的奇妙梦境"
 description: "一些有趣的梦"
 pubDate: "Feb 27 2025"
-updatedDate: "Mar 22 2025"
+updatedDate: "Mar 24 2025"
 heroImage: "/dream3.png"
 ---
 
@@ -27,3 +27,5 @@ heroImage: "/dream3.png"
 活在只有吃蔬菜才能生存的世界许下爱吃蔬菜的愿望
 
 领悟影分身奥义的我跳大神召唤财神却误迎月老亚种被迫为其寻觅婚配对象历经波折终在证婚宴席收获饕餮盛宴
+
+切除口腔溃疡竟成溃疡之神获得掌控他人溃疡能力却被迫承受永不愈合自身溃疡
