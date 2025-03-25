@@ -6,7 +6,7 @@ import Section from "@/components/Section.astro";
 import BlogPostCard from "@/components/BlogPostCard.astro";
 import SettingCollection from "@/components/SettingCollection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { KNOWN_TECH, ABOUT_ME } from "@/consts";
+import { LIKE, ABOUT_ME } from "@/consts";
 // import MarkdownContent from 'public/信息概要.md';
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -37,7 +37,7 @@ const posts = (await getCollection("blog")).sort(
       <div
         class="w-full gap-4 flex flex-wrap px-3 max-w-xl text-lg justify-center"
       >
-        {KNOWN_TECH.map((x) => <Breadcrumb title={x} />)}
+        {LIKE.map((x) => <Breadcrumb title={x} />)}
       </div>
     </div>
   </Section>
