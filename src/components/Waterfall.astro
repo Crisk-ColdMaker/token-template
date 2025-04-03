@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../content/image/*.{png,jpg,jpeg,webp}",
+  { eager: true }
+);
+const imageEntries = Object.values(images).map((image) => image.default);
+---
+
+<div class="waterfall" id="waterfall">
+    {imageEntries.map((image) => (
+        <div class="item">
+            <Image
+                src={image}
+                alt="Gallery image"
+                widths={[200, 400, 600]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
+                format="webp"
+            />
+        </div>
+    ))}
+</div>
+
+<style>
+    .waterfall {
+        margin: 0 40px;
+        padding: 20px;
+        position: relative;
+    }
+
+    .item {
+        width: auto;
+        margin-bottom: 20px;
+        break-inside: avoid;
+    }
+
+    @media (min-width: 768px) {
+        .waterfall {
+            column-count: 4;
+        }
+    }
+</style>
+
+<script define:vars={{ imageEntries }} is:inline>
+    import imagesLoaded from 'imagesloaded';
+
+    const initMasonry = () => {
+        const elem = document.querySelector('#waterfall');
+        
+        const msnry = new msnry(elem, {
+            itemSelector: '.item',
+            columnWidth: 200,
+            gutter: 20,
+            percentPosition: true
+        });
+
+        imagesLoaded(elem).on('done', () => {
+            msnry.layout();
+        });
+    };
+    let timeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(initMasonry, 250);
+    });
+
+    initMasonry();
+</script>

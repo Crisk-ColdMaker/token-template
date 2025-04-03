@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
 import Section from "@/components/Section.astro";
 import BlogPostCard from "@/components/BlogPostCard.astro";
 import SettingCollection from "@/components/SettingCollection.astro";
+import Waterfall from "@/components/Waterfall.astro";
 import Layout from "@/layouts/Layout.astro";
 import { LIKE, ABOUT_ME } from "@/consts";
 // import MarkdownContent from 'public/信息概要.md';
@@ -43,12 +44,12 @@ const posts = (await getCollection("blog")).sort(
   </Section>
   <Section title="About Hiki">
     <div class="w-full grid place-items-center">
-      <div
-      class="max-w-4xl text-xl md:text-lg opacity-90 justify-evenly"
-    >
-      <p class="text-center">「稍有过时的简要介绍（以后会有别的，先做一个左图右文的通用组件）」</p>
-      <SettingCollection/>
-    </div>
+      <div class="max-w-4xl text-xl md:text-lg opacity-90 justify-evenly">
+        <p class="text-center">
+          「稍有过时的简要介绍（以后会有别的，先做一个左图右文的通用组件）」
+        </p>
+        <SettingCollection />
+      </div>
       <div
         class="max-w-4xl mt-10 text-xl md:text-lg opacity-90 text-center justify-evenly"
       >
@@ -57,11 +58,15 @@ const posts = (await getCollection("blog")).sort(
       </div>
     </div>
   </Section>
+  <Section title="Some">
+    <Waterfall />
+  </Section>
   <Section title="More">
     <div class="w-full grid place-items-center">
       <div
         class="max-w-4xl text-xl md:text-lg opacity-90 text-center justify-evenly"
       >
+        <p>愚人节临时特典</p>
         <p>
           如果你想要进一步了解Hiki，网站作者卡手m进行了一些创作，可以为你提供一个第三视角作为参考
         </p>
