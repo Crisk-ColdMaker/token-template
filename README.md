@@ -27,7 +27,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/ArnavK-09/token-template.git my-portfolio
+git clone https://github.com/Crisk-ColdMaker/token-template.git
 cd my-portfolio
 
 # Install dependencies
@@ -63,7 +63,7 @@ npm run dev
    Clone the repo locally:
 
    ```bash
-   git clone https://github.com/ArnavK-09/token-template.git
+   git clone https://github.com/Crisk-ColdMaker/token-template.git
    ```
 
 3. **Create a Branch**  
@@ -94,10 +94,7 @@ npm run dev
 
 Found a bug or need help? Please create an issue on the [GitHub repository](https://github.com/ArnavK-09/token-template/issues) with a detailed description.
 
-## 📄 License
-<p align="center">
-<strong>原项目</strong>基于 ISC License
-</p>
+
 
 ## 👤 Author
 
@@ -112,7 +109,9 @@ Found a bug or need help? Please create an issue on the [GitHub repository](http
 ---
 
 <h2 align="center">📄 License</h2>
-
+<p align="center">
+<strong>原项目</strong>基于 ISC License
+</p>
 <p align="center">
 <strong>token-template</strong> is licensed under the <code>ISC</code> License. See the <a href="https://github.com/ArnavK-09/token-template/blob/main/LICENSE">LICENSE</a> file for more details.
 </p>

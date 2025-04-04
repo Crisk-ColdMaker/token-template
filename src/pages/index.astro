@@ -1,11 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import Hero from "@/components/Hero.astro";
+import { Image } from "astro:assets";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Section from "@/components/Section.astro";
 import BlogPostCard from "@/components/BlogPostCard.astro";
 import SettingCollection from "@/components/SettingCollection.astro";
 import Waterfall from "@/components/Waterfall.astro";
+import Player from "@/components/MusicPlayer.astro";
+import UTAUImage from "@/utauImage.jpg";
 import Layout from "@/layouts/Layout.astro";
 import { LIKE, ABOUT_ME } from "@/consts";
 // import MarkdownContent from 'public/信息概要.md';
@@ -55,6 +58,28 @@ const posts = (await getCollection("blog")).sort(
       >
         <p>「一位蓝发心理医生的资料」</p>
         <p>{ABOUT_ME}</p>
+      </div>
+    </div>
+  </Section>
+  <Section title="Hiki's UTAU">
+    <p class="text-center">还没有音频源，先放这个</p>
+    <div
+      class="grid grid-cols-1 md:grid-cols-[38.2%_61.8%] gap-8 max-w-6xl mx-auto p-4 items-stretch"
+    >
+      <Image
+        alt="Settings Preview"
+        src={UTAUImage}
+        class="h-full w-full object-cover bg-gray-100 rounded-lg"
+        quality={80}
+      />
+      <div
+        class="prose !max-w-none overflow-x-hidden brightness-110 prose-img:scale-90 prose-img:rounded-2xl prose-invert prose-hr:border-white prose-hr:bg-white px-4 md:px-0"
+      >
+        <div
+          class="w-full max-w-[600px] md:max-w-none h-full flex flex-col justify-center"
+        >
+          <Player musicFile="music/非常抱歉.wav" name="明明曾爱着你【カバー】" />
+        </div>
       </div>
     </div>
   </Section>

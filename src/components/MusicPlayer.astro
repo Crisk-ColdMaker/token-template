@@ -1,0 +1,156 @@
+---
+// src/components/MusicPlayer.astro
+const { musicFile, name = musicFile.replace(/\.[^/.]+$/, "") } = Astro.props;
+const musicPath = `${import.meta.env.BASE_URL}${musicFile}`;
+---
+
+<div class="music-player">
+  <div class="time">
+    <p class="start">0:00</p>
+    <p class="name">{name}</p>
+    <p class="end">-0:00</p>
+  </div>
+  <div class="processbar">
+    <div class="process"></div>
+  </div>
+  <div class="controls">
+    <div class="play active" id="play">
+      <svg
+        viewBox="0 0 32 28"
+        xmlns="http://www.w3.org/2000/svg"
+        style="filter: brightness(1.2)"
+      >
+        <path
+          d="M10.345 23.287c.415 0 .763-.15 1.22-.407l12.742-7.404c.838-.481 1.178-.855 1.178-1.46 0-.599-.34-.972-1.178-1.462L11.565 5.158c-.457-.265-.805-.407-1.22-.407-.789 0-1.345.606-1.345 1.57V21.71c0 .971.556 1.577 1.345 1.577z"
+          fill-rule="nonzero"
+          fill="#c1c1c1"></path>
+      </svg>
+    </div>
+    <div class="pause" id="pause">
+      <svg
+        viewBox="0 0 32 28"
+        xmlns="http://www.w3.org/2000/svg"
+        style="filter: brightness(1.2)"
+      >
+        <path
+          d="M13.293 22.772c.955 0 1.436-.481 1.436-1.436V6.677c0-.98-.481-1.427-1.436-1.427h-2.457c-.954 0-1.436.473-1.436 1.427v14.66c-.008.954.473 1.435 1.436 1.435h2.457zm7.87 0c.954 0 1.427-.481 1.427-1.436V6.677c0-.98-.473-1.427-1.428-1.427h-2.465c-.955 0-1.428.473-1.428 1.427v14.66c0 .954.473 1.435 1.428 1.435h2.465z"
+          fill-rule="nonzero"
+          fill="#c1c1c1"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script define:vars={{ musicPath }} is:inline>
+  class MusicController {
+    constructor() {
+      this.audio = new Audio(musicPath);
+      this.isPlaying = false;
+
+      this.playButton = document.getElementById("play");
+      this.pauseButton = document.getElementById("pause");
+      this.progressBar = document.querySelector(".process");
+      this.startTimeElement = document.querySelector(".start");
+      this.endTimeElement = document.querySelector(".end");
+
+      this.playButton.addEventListener("click", () => this.togglePlay());
+      this.pauseButton.addEventListener("click", () => this.togglePlay());
+      this.audio.addEventListener("timeupdate", () => this.updateProgress());
+      this.audio.addEventListener("loadedmetadata", () => {
+        this.endTimeElement.textContent = `-${this.formatTime(this.audio.duration)}`;
+      });
+      this.audio.addEventListener("ended", () => this.handleEnd());
+
+      document.querySelector(".processbar").addEventListener("click", (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const percentage = (e.clientX - rect.left) / rect.width;
+        this.audio.currentTime = percentage * this.audio.duration;
+      });
+    }
+
+    togglePlay() {
+      this.isPlaying = !this.isPlaying;
+      this.isPlaying ? this.audio.play() : this.audio.pause();
+      this.playButton.classList.toggle("active");
+      this.pauseButton.classList.toggle("active");
+    }
+
+    handleEnd() {
+      this.isPlaying = false;
+      this.playButton.classList.add("active");
+      this.pauseButton.classList.remove("active");
+      this.progressBar.style.width = "0%";
+      this.startTimeElement.textContent = "0:00";
+    }
+
+    updateProgress() {
+      const progress = (this.audio.currentTime / this.audio.duration) * 100;
+      this.progressBar.style.width = `${progress}%`;
+      this.startTimeElement.textContent = this.formatTime(
+        this.audio.currentTime,
+      );
+    }
+
+    formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, "0")}`;
+    }
+  }
+  new MusicController();
+</script>
+
+<style>
+  .music-player * {
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    margin: 20px 0;
+  }
+
+  .processbar {
+    width: 100%;
+    background: #555;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .process {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+  }
+
+  .controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .controls > div {
+    width: 32px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .play,
+  .pause {
+    display: none;
+  }
+
+  .play.active,
+  .pause.active {
+    display: block;
+  }
+</style>
