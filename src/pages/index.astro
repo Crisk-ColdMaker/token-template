@@ -15,6 +15,7 @@ import { LIKE, ABOUT_ME } from "@/consts";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const { default: Round2Info } = await import("@/content/AboutHiki.md");
 ---
 
 <Layout title="Hiki Fans">
@@ -53,11 +54,14 @@ const posts = (await getCollection("blog")).sort(
         </p>
         <SettingCollection />
       </div>
-      <div
-        class="max-w-4xl mt-10 text-xl md:text-lg opacity-90 text-center justify-evenly"
-      >
-        <p>「一位蓝发心理医生的资料」</p>
-        <p>{ABOUT_ME}</p>
+      <div class="max-w-4xl mt-10 text-xl md:text-lg opacity-90 justify-evenly">
+        <p class="text-center">「一位蓝发心理医生的资料」</p>
+        <div
+          class="prose !max-w-[90vw] overflow-x-hidden !break-words brightness-110 prose-img:scale-90 prose-img:rounded-2xl prose-invert prose-hr:border-white prose-hr:bg-white px-4 md:px-0"
+        >
+          <Round2Info />
+        </div>
+        <!-- <p>&emsp;&emsp;{ABOUT_ME}</p> -->
       </div>
     </div>
   </Section>
@@ -78,7 +82,10 @@ const posts = (await getCollection("blog")).sort(
         <div
           class="w-full max-w-[600px] md:max-w-none h-full flex flex-col justify-center"
         >
-          <Player musicFile="music/非常抱歉.wav" name="明明曾爱着你【カバー】" />
+          <Player
+            musicFile="music/非常抱歉.wav"
+            name="明明曾爱着你【カバー】"
+          />
         </div>
       </div>
     </div>
