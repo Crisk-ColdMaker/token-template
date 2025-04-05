@@ -14,7 +14,7 @@ const imageEntries = Object.values(images).map((image) => image.default);
         <div class="item">
             <Image
                 src={image}
-                alt="Gallery image"
+                alt="Gallery"
                 widths={[200, 400, 600]}
                 sizes="(max-width: 480px) 90vw, (max-width: 768px) 45vw, 30vw"
                 loading="lazy"
@@ -36,11 +36,10 @@ const imageEntries = Object.values(images).map((image) => image.default);
         break-inside: avoid;
     }
 
-    /* 手机端（小于480px） */
     @media (max-width: 480px) {
         .waterfall {
             margin: 0 10px;
-            column-count: 2 !important; /* 强制两列 */
+            column-count: 2 !important;
             column-gap: 10px;
         }
         .item {
@@ -56,7 +55,6 @@ const imageEntries = Object.values(images).map((image) => image.default);
         }
     }
 
-    /* 桌面端（769px+） */
     @media (min-width: 769px) {
         .waterfall {
             margin: 0 40px;
@@ -74,7 +72,6 @@ const imageEntries = Object.values(images).map((image) => image.default);
         const elem = document.querySelector('#waterfall');
         if (!elem) return;
 
-        // 根据窗口宽度动态设置列宽
         const columnWidth = window.innerWidth < 768 ? 150 : 200;
         
         const msnry = new Masonry(elem, {
@@ -87,18 +84,15 @@ const imageEntries = Object.values(images).map((image) => image.default);
         imagesLoaded(elem).on('done', () => msnry.layout());
     };
 
-    // 防抖函数优化
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             initMasonry();
-            // 强制重绘解决部分浏览器渲染问题
             document.body.clientWidth;
         }, 100);
     });
 
-    // 初始化执行
     document.addEventListener('DOMContentLoaded', initMasonry);
     window.addEventListener('load', initMasonry);
 </script>
