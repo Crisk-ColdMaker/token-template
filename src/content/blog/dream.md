@@ -2,7 +2,7 @@
 title: "Hiki的奇妙梦境"
 description: "一些有趣的梦"
 pubDate: "Feb 27 2025"
-updatedDate: "Apr 4 2025"
+updatedDate: "Apr 7 2025"
 heroImage: "/dream3.png"
 ---
 
@@ -35,4 +35,6 @@ heroImage: "/dream3.png"
 &emsp;&emsp;抓娃娃时被吸进机器里变小了，发小疯狂氪金尝试，我的钱(强调)花光后与工作人员协商得到白嫖许可后继续玩但死都不开柜子救我。
 
 &emsp;&emsp;发小被恶魔附身的老头老太忽悠非要买888块的植物奶油蛋糕，我开启驱魔模式连人带店全给扬了。
- 
+
+&emsp;&emsp;自己变成了像正常人一样会活动嘟嘟哒嘟嘟哒(骷髅)，形象过于超前以至于很多观众接受不能，无奈接受了现状之后却意外醒来了
+
